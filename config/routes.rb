@@ -4,8 +4,9 @@ Rails.application.routes.draw do
     resources :posts, only: [:show, :index, :new, :edit]
   end
 
-  get "/admin/stats" to:  'stats#index'
-  
+  scope '/admin' do 
+    resources :stats, only: [:index]
+
   resources :posts, only: [:index, :show, :new, :create, :edit, :update]
 
   root 'posts#index'
