@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :posts, only: [:show, :index, :new, :edit]
   end
 
-  scope '/admin', module: 'admin' do
+  namespace :admin do
     resources :stats, only: [:index]
   end
 
