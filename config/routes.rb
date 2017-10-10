@@ -4,7 +4,10 @@ Rails.application.routes.draw do
     resources :posts, only: [:show, :index, :new, :edit]
   end
 
+  get "/stats" to:  'stats#index'
+  
   resources :posts, only: [:index, :show, :new, :create, :edit, :update]
 
   root 'posts#index'
+  
 end
